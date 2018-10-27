@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet"></link>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"></link>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></link>
+</head>
+<title>{% block title %}{% endblock %}</title>
+<body>
+
+
+<!-- navigation bar -->
+<div class="container">
+
+  <div class="top_header">
+    <div class="container text-center">
+      <a href="/">Experiments by Bigyan.</a>
+    </div>
+  </div>
+
+  {% block content %}{% endblock %}
+</div>
+
+</body>
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+{% block js %}{%endblock%}
+
+</html>

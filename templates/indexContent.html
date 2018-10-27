@@ -1,0 +1,25 @@
+{% extends './index.html' %}
+
+{% block title %}Experiments by Bigyan{% endblock%}
+
+
+{% block content %}
+<div class= "flex-container">
+  {% for app in apps %}
+
+  <div class="content">
+    <a href="/{{app[0]}}">
+      <div class="content-overlay"></div>
+      <img class="content-image" src="{{ url_for('static', filename='assets/') }}{{app[2]}}">
+      <div class="content-details fadeIn-bottom">
+        <h3 class="content-title">{{app[0]}}</h3>
+        <p class="content-text">{{app[1]}}</p>
+      </div>
+    </a>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+{% endblock%}
