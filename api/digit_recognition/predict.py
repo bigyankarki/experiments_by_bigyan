@@ -5,6 +5,7 @@ from api.digit_recognition.process_image import processed_image
 
 def return_prediction(img):
 
+    tf.reset_default_graph()
     # ----------------------------- CONSTRUCTION PHASE ------------------
 
     # Defining parameters.
