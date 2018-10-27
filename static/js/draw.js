@@ -87,12 +87,11 @@ submitBtn.addEventListener("click",function (evt) {
 
             // get a prediction from the api.
             var prediction = document.getElementById("prediction");
-            prediction.innerHTML = data;
+            prediction.innerHTML = "Prediction: "+ data.prediction;
 
             // get confidence from the api
             var confidence = document.getElementById("confidence");
-            confidence.innerHTML = data;
-
+            confidence.innerHTML = "Confidence: " + data.confidence;
 
           });
       } else{

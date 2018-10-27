@@ -5,8 +5,6 @@ from io import BytesIO
 import cv2
 
 def processed_image(img_b64):
-    print("Processing image.")
-
     # decode the image
     encoded_image = img_b64.split(",")[1]
     # print(encoded_image)
@@ -21,7 +19,6 @@ def processed_image(img_b64):
 
     norm_image = cv2.normalize(resized_image, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
 
-    print(resized_image.shape)
     # ---------------Fit the image into 20x20 pixel box-------------
     # remove unnecessary black background
     while np.sum(norm_image[0]) == 0:

@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from api.digit_recognition.predict import return_prediction
-from base64 import b64decode
 
 app = Flask(__name__)
 
@@ -30,9 +29,11 @@ def apps(name):
 def get_image(app_name):
     image_b64 = request.values['image']
 
-    predict, confidence = return_prediction(image_b64)
+    prediction, confidence = return_prediction(image_b64)
 
-    return [predict,confidence]
+    res = {'prediction': str(prediction), 'confidence':str(confidence)}
+
+    return jsonify(res)
 
 if __name__ == '__main__':
     app.run(debug=True)
