@@ -20,19 +20,15 @@ def index():
 @app.route("/<name>")
 def apps(name):
     if name in ht_for_app['apps']:
-        if name == 'digit_recognition':
-            return render_template( name+'.html', name=name)
+        return render_template( name+'.html', name=name)
     else:
         return index()
 
 @app.route("/api/<app_name>", methods=['GET', 'POST'])
 def get_image(app_name):
     image_b64 = request.values['image']
-
     prediction, confidence = return_prediction(image_b64)
-
     res = {'prediction': str(prediction), 'confidence':str(confidence)}
-
     return jsonify(res)
 
 if __name__ == '__main__':
