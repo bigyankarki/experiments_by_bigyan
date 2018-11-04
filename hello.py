@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 ht_for_app = {
     'apps' : ['digit_recognition', 'char_RNN'],
-    'description' : ['digit recognition using ANN', 'Generate characters using RNN'],
+    'description' : ['Digit recognition using ANN', 'Generate characters using RNN'],
     'bg' : ['digit.jpeg', 'charRNN.png']
 }
 
